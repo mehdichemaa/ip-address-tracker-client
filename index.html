@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="./js/index.js" defer></script>
+
+    <title>Frontend Mentor | IP Address Tracker</title>
+  </head>
+  <body>
+    <header class="relative bg-purple-500 h-[30vh] z-[1000]">
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <img
+          class="h-full w-full object-cover"
+          src="./images/pattern-bg.png"
+          alt="Background"
+        />
+      </div>
+      <div
+        class="absolute z-10 left-1/2 -translate-x-1/2 top-20 w-[85%] desktop:w-[70%] flex flex-col items-center"
+      >
+        <div
+          class="flex flex-col items-center w-full tablet:w-[85%] laptop:w-[50%]"
+        >
+          <h1 class="text-white text-2xl font-regular">IP Address Tracker</h1>
+          <form class="mt-2 flex w-full" action="#">
+            <input
+              class="rounded-l-xl border-black-dark w-full hover:cursor-pointer"
+              type="search"
+              placeholder="Search for any IP address or domain"
+            />
+            <button
+              class="bg-black-dark px-5 rounded-r-xl hover:bg-black-light transition-all"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="3"
+                  d="M2 1l6 6-6 6"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div
+          class="mt-10 bg-white w-full text-center tablet:text-left rounded-xl p-5 tablet:px-10"
+        >
+          <ul class="tablet:flex justify-between items-center">
+            <li class="flex flex-col mt-2 tablet:p-5 tablet:pl-0">
+              <span class="text-gray uppercase text-[10px] font-semibold"
+                >IP Address</span
+              >
+              <span class="tablet:text-2xl">12345</span>
+            </li>
+            <li
+              class="flex flex-col mt-2 tablet:p-5 tablet:border-l border-gray"
+            >
+              <span class="text-gray uppercase text-[10px] font-semibold"
+                >Location</span
+              >
+              <span class="tablet:text-2xl">Brooklyn</span>
+            </li>
+            <li
+              class="flex flex-col mt-2 tablet:p-5 tablet:border-l border-l-gray"
+            >
+              <span class="text-gray uppercase text-[10px] font-semibold"
+                >Timezone</span
+              >
+              <span class="tablet:text-2xl">UTC</span>
+            </li>
+            <li
+              class="flex flex-col mt-2 tablet:p-5 tablet:border-l border-gray"
+            >
+              <span class="text-gray uppercase text-[10px] font-semibold"
+                >ISP</span
+              >
+              <span class="tablet:text-2xl">SpaceX</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="map" class="h-[70vh]"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <script>
+      // Initializing Leaflet JS
+      var map = L.map('map').setView([51.505, -0.09], 13);
+
+      // Adding OpenStreetMap tile layer
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+    </script>
+  </body>
+</html>

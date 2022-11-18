@@ -1,0 +1,10 @@
+@tailwind base;
+
+@layer base {
+  html {
+    @apply font-rubik text-[18px] text-black-dark;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
