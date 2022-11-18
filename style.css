@@ -686,6 +686,15 @@ html {
   --tw-backdrop-sepia:  ;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 .visible {
   visibility: visible;
 }
@@ -782,16 +791,12 @@ html {
   display: none;
 }
 
-.h-\[30vh\] {
-  height: 30vh;
+.h-64 {
+  height: 16rem;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-\[70vh\] {
-  height: 70vh;
 }
 
 .h-11 {
@@ -800,6 +805,18 @@ html {
 
 .h-20 {
   height: 5rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-80 {
+  height: 20rem;
+}
+
+.h-72 {
+  height: 18rem;
 }
 
 .w-full {
@@ -900,14 +917,19 @@ html {
   border-left-width: 1px;
 }
 
+.border-black-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .border-gray {
   --tw-border-opacity: 1;
   border-color: rgb(150 150 150 / var(--tw-border-opacity));
 }
 
-.border-black-dark {
+.border-l-gray {
   --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  border-left-color: rgb(150 150 150 / var(--tw-border-opacity));
 }
 
 .border-r-gray {
@@ -915,9 +937,9 @@ html {
   border-right-color: rgb(150 150 150 / var(--tw-border-opacity));
 }
 
-.border-l-gray {
-  --tw-border-opacity: 1;
-  border-left-color: rgb(150 150 150 / var(--tw-border-opacity));
+.bg-black-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -928,11 +950,6 @@ html {
 .bg-gray {
   --tw-bg-opacity: 1;
   background-color: rgb(150 150 150 / var(--tw-bg-opacity));
-}
-
-.bg-black-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -978,6 +995,15 @@ html {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.pt-\[45\%\] {
+  padding-top: 45%;
 }
 
 .pr-10 {
@@ -1118,11 +1144,6 @@ html {
 
   .tablet\:border-l {
     border-left-width: 1px;
-  }
-
-  .tablet\:border-l-gray {
-    --tw-border-opacity: 1;
-    border-left-color: rgb(150 150 150 / var(--tw-border-opacity));
   }
 
   .tablet\:p-5 {
