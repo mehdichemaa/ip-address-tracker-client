@@ -1030,6 +1030,14 @@ html {
   padding-left: 0px;
 }
 
+.pt-\[100\%\] {
+  padding-top: 100%;
+}
+
+.pt-\[100vh\] {
+  padding-top: 100vh;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1159,6 +1167,18 @@ html {
     padding-left: 0px;
   }
 
+  .tablet\:pt-\[45\%\] {
+    padding-top: 45%;
+  }
+
+  .tablet\:pt-\[75\%\] {
+    padding-top: 75%;
+  }
+
+  .tablet\:pt-\[50\%\] {
+    padding-top: 50%;
+  }
+
   .tablet\:text-left {
     text-align: left;
   }
@@ -1172,6 +1192,10 @@ html {
 @media (min-width: 1024px) {
   .laptop\:w-\[50\%\] {
     width: 50%;
+  }
+
+  .laptop\:pt-\[45\%\] {
+    padding-top: 45%;
   }
 }
 
