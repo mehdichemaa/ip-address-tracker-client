@@ -105,7 +105,7 @@
         </div>
       </div>
     </header>
-    <div id="map" class="pt-[100vh] tablet:pt-[50%] laptop:pt-[45%]"></div>
+    <div id="map" class="pt-[100vh] tablet:pt-[80%] laptop:pt-[45%]"></div>
 
     <footer class="py-2">
       <div class="attribution">
@@ -131,6 +131,11 @@
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
+
+      L.marker([51.5, -0.09])
+        .addTo(map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
     </script>
   </body>
 </html>
