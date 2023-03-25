@@ -27,7 +27,13 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-    <script src="./js/index.js" defer></script>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <script src="./src/js/index.js" defer></script>
 
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
@@ -116,26 +122,5 @@
         <a href="https://mehdichemaa.com" target="_blank">Mehdi Chemaa</a>.
       </div>
     </footer>
-    <script
-      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-      crossorigin=""
-    ></script>
-    <script>
-      // Initializing Leaflet JS
-      var map = L.map('map').setView([51.505, -0.09], 13);
-
-      // Adding OpenStreetMap tile layer
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      }).addTo(map);
-
-      L.marker([51.5, -0.09])
-        .addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
-    </script>
   </body>
 </html>

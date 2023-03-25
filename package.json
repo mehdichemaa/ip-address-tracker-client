@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel build:css server",
     "build:css": "npx tailwindcss -i ./src/css/tailwind.css -o ./style.css --watch",
-    "server": "live-server --browser=firefox"
+    "server": "live-server --browser=Firefox"
   },
   "keywords": [],
   "author": "",
