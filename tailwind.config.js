@@ -17,7 +17,6 @@ module.exports = {
       white: '#ffffff',
       'black-light': '#2b2b2b',
       'black-dark': '#000000',
-      gray: '#969696',
     },
     fontFamily: {
       rubik: 'rubik',
