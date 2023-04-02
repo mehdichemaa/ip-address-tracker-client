@@ -819,6 +819,14 @@ html {
   height: 18rem;
 }
 
+.h-\[20vh\] {
+  height: 20vh;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1030,6 +1038,46 @@ html {
   padding-left: 0px;
 }
 
+.pt-\[50vh\] {
+  padding-top: 50vh;
+}
+
+.pt-\[80vh\] {
+  padding-top: 80vh;
+}
+
+.pt-\[30vh\] {
+  padding-top: 30vh;
+}
+
+.pt-\[20vh\] {
+  padding-top: 20vh;
+}
+
+.pt-\[10vh\] {
+  padding-top: 10vh;
+}
+
+.pt-\[30\%\] {
+  padding-top: 30%;
+}
+
+.pt-\[32\%\] {
+  padding-top: 32%;
+}
+
+.pt-\[60vh\] {
+  padding-top: 60vh;
+}
+
+.pt-\[70vh\] {
+  padding-top: 70vh;
+}
+
+.pt-\[65vh\] {
+  padding-top: 65vh;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1114,6 +1162,12 @@ html {
   text-decoration-line: underline;
 }
 
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline {
   outline-style: solid;
 }
@@ -1163,6 +1217,10 @@ html {
     padding-top: 80%;
   }
 
+  .tablet\:pt-\[60vh\] {
+    padding-top: 60vh;
+  }
+
   .tablet\:text-left {
     text-align: left;
   }
@@ -1180,6 +1238,10 @@ html {
 
   .laptop\:pt-\[45\%\] {
     padding-top: 45%;
+  }
+
+  .laptop\:pt-\[60vh\] {
+    padding-top: 60vh;
   }
 }
 

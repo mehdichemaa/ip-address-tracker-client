@@ -1,21 +1,52 @@
 // Select elements and fields
 const formInput = document.querySelector('.formInput');
 const searchBtn = document.querySelector('.searchBtn');
+const resultsContainer = document.querySelector('.resultsContainer');
 const ipAddressField = document.querySelector('.ipAddressField');
 const locationField = document.querySelector('.locationField');
 const timeZoneField = document.querySelector('.timeZoneField');
 const zipCodeField = document.querySelector('.zipCodeField');
 
 // Get IP Address Data
-async function getIpAddressData(ip) {
+function getIpAddressData(ip) {
   // Default options are marked with *
-  const response = await fetch(`http://127.0.0.1:3000/?ip=${ip}`)
+  fetch(`https://ip-address-tracker.up.railway.app/?ip=${ip}`)
     .then((response) => response.json())
     .then((data) => {
+      // Display IP Address data
       ipAddressField.textContent = ip;
       locationField.textContent = data.result.city + ', ' + data.result.country;
       timeZoneField.textContent = data.result.time_zone;
       zipCodeField.textContent = data.result.zip_code;
+      resultsContainer.classList.remove('hidden');
+
+      // Assign latitude and longitude
+      let latitude = data.result.latitude;
+      let longitude = data.result.longitude;
+
+      // Initializing Leaflet JS
+      let map = L.map('map').setView([latitude, longitude], 13);
+
+      // Adding OpenStreetMap tile layer
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+
+      // Update the map's view
+      map.setView([latitude, longitude], 13);
+
+      // Add the map's marker
+      L.marker([latitude, longitude]).addTo(map);
+
+      // Add the map's circle
+      L.circle([latitude, longitude], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 1000,
+      }).addTo(map);
 
       console.log('Success:', data);
     })
@@ -28,22 +59,8 @@ async function getIpAddressData(ip) {
 searchBtn.addEventListener('click', async (event) => {
   event.preventDefault();
 
+  // Check if form input is not empty
   if (formInput.value) {
     getIpAddressData(formInput.value);
   }
 });
-
-// Initializing Leaflet JS
-var map = L.map('map').setView([51.505, -0.09], 13);
-
-// Adding OpenStreetMap tile layer
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution:
-    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-}).addTo(map);
-
-L.marker([51.5, -0.09])
-  .addTo(map)
-  .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-  .openPopup();
