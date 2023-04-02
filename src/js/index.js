@@ -7,9 +7,17 @@ const locationField = document.querySelector('.locationField');
 const timeZoneField = document.querySelector('.timeZoneField');
 const zipCodeField = document.querySelector('.zipCodeField');
 const spinner = document.querySelector('.spinner');
+const errorPopup = document.querySelector('.errorPopup');
 
 // Initializing Leaflet JS
 const map = L.map('map');
+
+// Adding OpenStreetMap tile layer
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
 
 // Get the client IP Address
 fetch('https://api.ipify.org?format=json')
@@ -18,7 +26,18 @@ fetch('https://api.ipify.org?format=json')
     formInput.value = ip;
     getIpAddressData(ip);
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.log(err);
+
+    // Empty the input field
+    formInput.value = '';
+
+    // Hide the spinned
+    spinner.classList.add('hidden');
+
+    // Update the map's view to default
+    map.setView([33.233334, -8.5], 10);
+  });
 
 // Get IP Address Data
 function getIpAddressData(ip) {
@@ -33,6 +52,8 @@ function getIpAddressData(ip) {
       locationField.textContent = data.result.city + ', ' + data.result.country;
       timeZoneField.textContent = data.result.time_zone;
       zipCodeField.textContent = data.result.zip_code;
+
+      // Hide/Show components
       resultsContainer.classList.remove('hidden');
       spinner.classList.add('hidden');
 
@@ -53,16 +74,12 @@ function getIpAddressData(ip) {
         fillOpacity: 0.5,
         radius: 5000,
       }).addTo(map);
-
-      // Adding OpenStreetMap tile layer
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      }).addTo(map);
     })
     .catch((error) => {
       console.error('Error:', error);
+
+      // Show error popup
+      errorPopup.classList.remove('hidden');
     });
 }
 
@@ -73,7 +90,10 @@ searchBtn.addEventListener('click', async (event) => {
   // Check if form input is not empty
   if (formInput.value) {
     getIpAddressData(formInput.value);
+
+    // Hide/Show components
     resultsContainer.classList.add('hidden');
     spinner.classList.remove('hidden');
+    errorPopup.classList.add('hidden');
   }
 });

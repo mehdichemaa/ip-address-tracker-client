@@ -57,7 +57,7 @@
             <input
               class="formInput rounded-l-xl border-black-dark w-full hover:cursor-pointer"
               type="search"
-              placeholder="Search for any IP address or domain"
+              placeholder="Search for any IP address"
             />
             <button
               class="searchBtn bg-black-dark px-5 rounded-r-xl hover:bg-black-light transition-all"
@@ -72,6 +72,11 @@
               </svg>
             </button>
           </form>
+          <div
+            class="errorPopup hidden mt-2 bg-red-dark border-2 border-red-light text-white text-sm rounded-md px-2 py-1"
+          >
+            <p>Please input a correct IP Address!</p>
+          </div>
         </div>
         <div
           class="resultsContainer hidden mt-10 bg-white w-full text-center laptop:text-left rounded-xl p-5 laptop:px-10 shadow-lg"

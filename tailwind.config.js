@@ -13,6 +13,8 @@ module.exports = {
       'black-light': '#2b2b2b',
       'black-dark': '#000000',
       gray: '#969696',
+      'red-light': '#f85149',
+      'red-dark': '#da3633',
     },
     fontFamily: {
       rubik: 'rubik',
