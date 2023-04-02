@@ -6,7 +6,7 @@ const ipAddressField = document.querySelector('.ipAddressField');
 const locationField = document.querySelector('.locationField');
 const timeZoneField = document.querySelector('.timeZoneField');
 const zipCodeField = document.querySelector('.zipCodeField');
-const preloader = document.querySelector('.preloader');
+const spinner = document.querySelector('.spinner');
 
 // Initializing Leaflet JS
 const map = L.map('map');
@@ -34,7 +34,7 @@ function getIpAddressData(ip) {
       timeZoneField.textContent = data.result.time_zone;
       zipCodeField.textContent = data.result.zip_code;
       resultsContainer.classList.remove('hidden');
-      preloader.classList.add('hidden');
+      spinner.classList.add('hidden');
 
       // Assign latitude and longitude
       let latitude = data.result.latitude;
@@ -74,6 +74,6 @@ searchBtn.addEventListener('click', async (event) => {
   if (formInput.value) {
     getIpAddressData(formInput.value);
     resultsContainer.classList.add('hidden');
-    preloader.classList.remove('hidden');
+    spinner.classList.remove('hidden');
   }
 });

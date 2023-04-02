@@ -1,11 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.{css,js}',
-    './index.html',
-    './style.css',
-    './node_modules/flowbite/**/*.js',
-  ],
+  content: ['./src/**/*.{css,js}', './index.html', './style.css'],
   theme: {
     extend: {},
     screens: {
@@ -17,10 +12,11 @@ module.exports = {
       white: '#ffffff',
       'black-light': '#2b2b2b',
       'black-dark': '#000000',
+      gray: '#969696',
     },
     fontFamily: {
       rubik: 'rubik',
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('flowbite/plugin')],
+  plugins: [require('@tailwindcss/forms')],
 };
