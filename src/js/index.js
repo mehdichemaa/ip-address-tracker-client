@@ -7,6 +7,15 @@ const locationField = document.querySelector('.locationField');
 const timeZoneField = document.querySelector('.timeZoneField');
 const zipCodeField = document.querySelector('.zipCodeField');
 
+// Get the client IP Address
+fetch('https://api.ipify.org?format=json')
+  .then((res) => res.json())
+  .then(({ ip }) => {
+    formInput.value = ip;
+    getIpAddressData(ip);
+  })
+  .catch((err) => console.log(err));
+
 // Get IP Address Data
 function getIpAddressData(ip) {
   // Default options are marked with *
