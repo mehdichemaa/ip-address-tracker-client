@@ -19,21 +19,24 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="stylesheet" href="style.css" />
+    <script src="./src/js/index.js" defer></script>
+
+    <!-- Leaftlet.js -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
       integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
       crossorigin=""
     />
-
-    <link rel="stylesheet" href="style.css" />
-
     <script
       src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
       integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
       crossorigin=""
     ></script>
-    <script src="./src/js/index.js" defer></script>
+
+    <!-- Flowbite -->
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
@@ -74,44 +77,65 @@
           </form>
         </div>
         <div
-          class="resultsContainer hidden mt-10 bg-white w-full text-center tablet:text-left rounded-xl p-5 tablet:px-10 shadow-lg"
+          class="resultsContainer hidden mt-10 bg-white w-full text-center laptop:text-left rounded-xl p-5 laptop:px-10 shadow-lg"
         >
-          <ul class="tablet:flex justify-between items-center">
-            <li class="flex flex-col mt-2 tablet:p-5 tablet:pl-0">
+          <ul class="laptop:flex justify-between items-center">
+            <li class="flex flex-col mt-2 laptop:p-5 laptop:pl-0">
               <span class="text-gray uppercase text-[10px] font-semibold"
                 >IP Address</span
               >
-              <span class="ipAddressField tablet:text-2xl"></span>
+              <span class="ipAddressField laptop:text-2xl"></span>
             </li>
             <li
-              class="flex flex-col mt-2 tablet:p-5 tablet:border-l border-gray"
+              class="flex flex-col mt-2 laptop:p-5 laptop:border-l border-gray"
             >
               <span class="text-gray uppercase text-[10px] font-semibold"
                 >Location</span
               >
-              <span class="locationField tablet:text-2xl"></span>
+              <span class="locationField laptop:text-2xl"></span>
             </li>
             <li
-              class="flex flex-col mt-2 tablet:p-5 tablet:border-l border-l-gray"
+              class="flex flex-col mt-2 laptop:p-5 laptop:border-l border-l-gray"
             >
               <span class="text-gray uppercase text-[10px] font-semibold"
                 >Time Zone</span
               >
-              <span class="timeZoneField tablet:text-2xl"></span>
+              <span class="timeZoneField laptop:text-2xl"></span>
             </li>
             <li
-              class="flex flex-col mt-2 tablet:p-5 tablet:border-l border-gray"
+              class="flex flex-col mt-2 laptop:p-5 laptop:border-l border-gray"
             >
               <span class="text-gray uppercase text-[10px] font-semibold"
                 >ZIP CODE</span
               >
-              <span class="zipCodeField tablet:text-2xl"></span>
+              <span class="zipCodeField laptop:text-2xl"></span>
             </li>
           </ul>
         </div>
       </div>
     </header>
-    <div id="map" class="pt-[65vh]"></div>
+
+    <div id="map" class="pt-[65vh] relative">
+      <div role="status" class="absolute top-1/2 left-1/2">
+        <svg
+          aria-hidden="true"
+          class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          viewBox="0 0 100 101"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+            fill="currentColor"
+          />
+          <path
+            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentFill"
+          />
+        </svg>
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
 
     <footer class="py-2">
       <div class="attribution">

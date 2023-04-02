@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{css,js}', './index.html', './style.css'],
+  content: [
+    './src/**/*.{css,js}',
+    './index.html',
+    './style.css',
+    './node_modules/flowbite/**/*.js',
+  ],
   theme: {
     extend: {},
     screens: {
@@ -18,5 +23,5 @@ module.exports = {
       rubik: 'rubik',
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('flowbite/plugin')],
 };
