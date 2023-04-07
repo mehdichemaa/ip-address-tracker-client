@@ -72,7 +72,7 @@ function getIpAddressData(ip) {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 5000,
+        radius: 10000,
       }).addTo(map);
     })
     .catch((error) => {
